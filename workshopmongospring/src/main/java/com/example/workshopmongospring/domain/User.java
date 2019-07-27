@@ -2,9 +2,15 @@ package com.example.workshopmongospring.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+//@Document(collection = "user") -- Não usando essa anotação, é mapeado o nome da classe com letra minúscula
+@Document
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
+	@Id
 	private String id;
 	private String name;
 	private String email;
